@@ -1,21 +1,22 @@
 apiVersion: mongodb.com/v1
 kind: MongoDB
 metadata:
-  name: example-mongo
+  name: mongodb-cluster
+  namespace: mongo
 spec:
+  type: Standalone
   # the name of the secret in 1-ops-manager-config-secret.yaml
-  credentials: ops-manager-organization-apikey
-  members: 3
+  credentials: mongo-ops-manager-admin-key
   # the name of the cm in 1-ops-manager-config-secret.yaml
   opsManager:
     configMapRef:
-      name: ops-manager-example-mongo-config
-  type: ReplicaSet
-  version: 4.2.2-ent
-  # security:
+      name: ops-manager-mongo-config
+  version: 4.4.5-ent
+  security:
+    authentication:
+      enabled: true
+      modes:
+        - SCRAM
   #   tls:
   #     enabled: true
   #     ca: custom-ca
-  #   authentication:
-  #     enabled: true
-  #     modes: ["SCRAM"]

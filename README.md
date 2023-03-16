@@ -362,3 +362,8 @@ You should see a 201 response. You can now try "GET /transactions" and you can a
 This code pattern is licensed under the Apache License, Version 2. Separate third-party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1](https://developercertificate.org/) and the [Apache License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
 [Apache License FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+
+### Resources
+* [Secure MongoDB Enterprise on Red Hat OpenShift](https://developer.ibm.com/tutorials/secure-mongo-db-enterprise-on-red-hat-openshift/)
+* [Ops Manager Resource Specification](https://www.mongodb.com/docs/kubernetes-operator/v1.18/reference/k8s-operator-om-specification/)
+* [MongoDB Standalone Sample](https://github.com/mongodb/mongodb-enterprise-kubernetes/tree/master/samples/mongodb/authentication/scram/standalone)

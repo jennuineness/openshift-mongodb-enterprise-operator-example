@@ -3,6 +3,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: ops-manager-admin-secret
+  namespace: mongo
 type: Opaque
 stringData:
   Username: john@example.com
@@ -17,14 +18,17 @@ apiVersion: mongodb.com/v1
 kind: MongoDBOpsManager
 metadata:
   name: ops-manager
+  namespace: mongo
 spec:
-  version: 4.2.8
-  # adminCredentials value is the name of secret above
-  adminCredentials: ops-manager-admin-secret
   externalConnectivity:
     type: LoadBalancer
   applicationDatabase:
+    podSpec:
+      cpu: 1
     members: 3
-    # podSpec:
-    #   cpu: '1'
-    #   memory: '2G'
+    version: 5.0.14-ent
+  configuration:
+    mms.fromEmailAddr: admin@thecompany.com
+  adminCredentials: ops-manager-admin-secret
+  version: 6.0.3
+
